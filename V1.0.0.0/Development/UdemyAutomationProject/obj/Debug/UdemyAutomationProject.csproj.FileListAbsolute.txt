@@ -1,0 +1,17 @@
+C:\Users\mchylinx\Documents\Visual Studio 2015\Projects\UdemyAutomationTestingCourse\V1.0.0.0\Development\UdemyAutomationProject\obj\Debug\UdemyAutomationProject.csprojResolveAssemblyReference.cache
+C:\Users\mchylinx\Documents\Visual Studio 2015\Projects\UdemyAutomationTestingCourse\V1.0.0.0\Development\UdemyAutomationProject\bin\Debug\IEDriverServer-license.txt
+C:\Users\mchylinx\Documents\Visual Studio 2015\Projects\UdemyAutomationTestingCourse\V1.0.0.0\Development\UdemyAutomationProject\bin\Debug\ChromeDriver.exe
+C:\Users\mchylinx\Documents\Visual Studio 2015\Projects\UdemyAutomationTestingCourse\V1.0.0.0\Development\UdemyAutomationProject\bin\Debug\IEDriverServer.exe
+C:\Users\mchylinx\Documents\Visual Studio 2015\Projects\UdemyAutomationTestingCourse\V1.0.0.0\Development\UdemyAutomationProject\bin\Debug\UdemyAutomationProject.dll
+C:\Users\mchylinx\Documents\Visual Studio 2015\Projects\UdemyAutomationTestingCourse\V1.0.0.0\Development\UdemyAutomationProject\bin\Debug\UdemyAutomationProject.pdb
+C:\Users\mchylinx\Documents\Visual Studio 2015\Projects\UdemyAutomationTestingCourse\V1.0.0.0\Development\UdemyAutomationProject\bin\Debug\WebDriver.dll
+C:\Users\mchylinx\Documents\Visual Studio 2015\Projects\UdemyAutomationTestingCourse\V1.0.0.0\Development\UdemyAutomationProject\bin\Debug\WebDriver.Support.dll
+C:\Users\mchylinx\Documents\Visual Studio 2015\Projects\UdemyAutomationTestingCourse\V1.0.0.0\Development\UdemyAutomationProject\bin\Debug\WebDriverWrapper.dll
+C:\Users\mchylinx\Documents\Visual Studio 2015\Projects\UdemyAutomationTestingCourse\V1.0.0.0\Development\UdemyAutomationProject\bin\Debug\WebDriverWrapper.pdb
+C:\Users\mchylinx\Documents\Visual Studio 2015\Projects\UdemyAutomationTestingCourse\V1.0.0.0\Development\UdemyAutomationProject\bin\Debug\WebDriver.xml
+C:\Users\mchylinx\Documents\Visual Studio 2015\Projects\UdemyAutomationTestingCourse\V1.0.0.0\Development\UdemyAutomationProject\bin\Debug\WebDriver.Support.xml
+C:\Users\mchylinx\Documents\Visual Studio 2015\Projects\UdemyAutomationTestingCourse\V1.0.0.0\Development\UdemyAutomationProject\obj\Debug\UdemyAutomationProject.dll
+C:\Users\mchylinx\Documents\Visual Studio 2015\Projects\UdemyAutomationTestingCourse\V1.0.0.0\Development\UdemyAutomationProject\obj\Debug\UdemyAutomationProject.pdb
+C:\Users\mchylinx\Documents\Visual Studio 2015\Projects\UdemyAutomationTestingCourse\V1.0.0.0\Development\UdemyAutomationProject\bin\Debug\geckodriver.exe
+C:\Users\mchylinx\Documents\Visual Studio 2015\Projects\UdemyAutomationTestingCourse\V1.0.0.0\Development\UdemyAutomationProject\bin\Debug\Newtonsoft.Json.dll
+C:\Users\mchylinx\Documents\Visual Studio 2015\Projects\UdemyAutomationTestingCourse\V1.0.0.0\Development\UdemyAutomationProject\bin\Debug\Newtonsoft.Json.xml

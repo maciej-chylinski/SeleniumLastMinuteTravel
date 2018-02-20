@@ -1,0 +1,23 @@
+Nuget manager, install:
+Selenium.WebDriver, Selenium.Support
+WebDriverIEDriver
+WebDriver.ChromeDriver
+FireFox is native for Selenium(build-in)
+
+Add Chrome driver as a link:
+right click on WebDriver Wrapper->Add->Existing Item (find Chrome driver, filter to: *.*, ADD AS A LINK)
+
+Xpath:
+1. Right click on element -> Inspect -> click on item -> copy as Xpath (or selector)
+2. To validate xpath click console, and:
+$x("//*[contains(@id,'find-hotels')]")
+$x("//*[@id='find-hotels']")
+
+To remove hidden elements:
+$x("//*[contains(@id,'find-hotels') and not (@type='hidden')]")
+
+
+//PROBLEMS - selenium
+//1. (unexpected) Pop Up banners
+//2. Asynchronic page load 
+//3. The synchronic page load - solution: maximize page (not ideal solution)

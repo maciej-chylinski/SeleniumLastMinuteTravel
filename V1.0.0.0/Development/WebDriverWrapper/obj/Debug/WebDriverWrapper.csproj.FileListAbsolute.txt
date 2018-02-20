@@ -1,0 +1,14 @@
+C:\Users\mchylinx\Documents\Visual Studio 2015\Projects\UdemyAutomationTestingCourse\V1.0.0.0\Development\WebDriverWrapper\bin\Debug\IEDriverServer-license.txt
+C:\Users\mchylinx\Documents\Visual Studio 2015\Projects\UdemyAutomationTestingCourse\V1.0.0.0\Development\WebDriverWrapper\bin\Debug\ChromeDriver.exe
+C:\Users\mchylinx\Documents\Visual Studio 2015\Projects\UdemyAutomationTestingCourse\V1.0.0.0\Development\WebDriverWrapper\bin\Debug\IEDriverServer.exe
+C:\Users\mchylinx\Documents\Visual Studio 2015\Projects\UdemyAutomationTestingCourse\V1.0.0.0\Development\WebDriverWrapper\bin\Debug\WebDriverWrapper.dll
+C:\Users\mchylinx\Documents\Visual Studio 2015\Projects\UdemyAutomationTestingCourse\V1.0.0.0\Development\WebDriverWrapper\bin\Debug\WebDriverWrapper.pdb
+C:\Users\mchylinx\Documents\Visual Studio 2015\Projects\UdemyAutomationTestingCourse\V1.0.0.0\Development\WebDriverWrapper\bin\Debug\WebDriver.dll
+C:\Users\mchylinx\Documents\Visual Studio 2015\Projects\UdemyAutomationTestingCourse\V1.0.0.0\Development\WebDriverWrapper\bin\Debug\WebDriver.Support.dll
+C:\Users\mchylinx\Documents\Visual Studio 2015\Projects\UdemyAutomationTestingCourse\V1.0.0.0\Development\WebDriverWrapper\bin\Debug\WebDriver.xml
+C:\Users\mchylinx\Documents\Visual Studio 2015\Projects\UdemyAutomationTestingCourse\V1.0.0.0\Development\WebDriverWrapper\bin\Debug\WebDriver.Support.xml
+C:\Users\mchylinx\Documents\Visual Studio 2015\Projects\UdemyAutomationTestingCourse\V1.0.0.0\Development\WebDriverWrapper\obj\Debug\WebDriverWrapper.dll
+C:\Users\mchylinx\Documents\Visual Studio 2015\Projects\UdemyAutomationTestingCourse\V1.0.0.0\Development\WebDriverWrapper\obj\Debug\WebDriverWrapper.pdb
+C:\Users\mchylinx\Documents\Visual Studio 2015\Projects\UdemyAutomationTestingCourse\V1.0.0.0\Development\WebDriverWrapper\bin\Debug\Newtonsoft.Json.dll
+C:\Users\mchylinx\Documents\Visual Studio 2015\Projects\UdemyAutomationTestingCourse\V1.0.0.0\Development\WebDriverWrapper\bin\Debug\Newtonsoft.Json.xml
+C:\Users\mchylinx\Documents\Visual Studio 2015\Projects\UdemyAutomationTestingCourse\V1.0.0.0\Development\WebDriverWrapper\obj\Debug\WebDriverWrapper.csprojResolveAssemblyReference.cache
