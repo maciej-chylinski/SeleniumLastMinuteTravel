@@ -10,6 +10,7 @@ using OpenQA.Selenium.IE;
 //for combo-boxes
 using OpenQA.Selenium.Support.UI;
 using WebDriverWrapper;
+using WebDriverWrapper.Extensions;
 
 
 
@@ -98,10 +99,18 @@ namespace UdemyAutomationProject
         [TestMethod]
         public void WebElementSamples()
         {
+            //IE
             IWebDriver webDriver = new InternetExplorerDriver();
+
+            //FF
+            //var binary = new FirefoxBinary(@"C:\Program Files (x86)\Mozilla Firefox\firefox.exe");
+            //IWebDriver webDriver = new FirefoxDriver(binary, new FirefoxProfile());
+                
+            //Chrome            
             //IWebDriver webDriver = new ChromeDriver();
+
             webDriver.Navigate().GoToUrl("http://www.lastminutetravel.com/flights");
-            webDriver.Manage().Window.Maximize();
+            //webDriver.Manage().Window.Maximize();
 
             var radioButton = webDriver.FindElement(By.XPath("//*[@id='flights']/div/div[4]/div[3]/label"));
             radioButton.Click();
@@ -116,7 +125,7 @@ namespace UdemyAutomationProject
             var fromTextBox = webDriver.FindElement(By.XPath("//*[@id=\"autosuggest-flightsFrom\"]"));
             fromTextBox.Click();
             fromTextBox.Clear();
-            fromTextBox.SendKeys("New York");
+            fromTextBox.SendKeys("N");
             Thread.Sleep(1000);
             //DEALING WITH AUTO-FILLING             
             webDriver.FindElement(By.XPath("//*[@id='react-autowhatever-1-section-0-item-0']/div/span[4]")).Click();
@@ -125,7 +134,7 @@ namespace UdemyAutomationProject
             var toTextBox = webDriver.FindElement(By.XPath("//*[@id='autosuggest-flightsTo']"));
             toTextBox.Click();
             toTextBox.Clear();
-            toTextBox.SendKeys("Miami");
+            toTextBox.SendKeys("M");
             Thread.Sleep(1000);
             webDriver.FindElement(By.XPath("//*[@id='react-autowhatever-1-section-0-item-0']/div/span[2]")).Click();
             
@@ -180,9 +189,6 @@ namespace UdemyAutomationProject
             
             Thread.Sleep(1000);
             webDriver.Dispose();
-
-            
-
         }
 
         [TestMethod]
@@ -232,11 +238,47 @@ namespace UdemyAutomationProject
         [TestMethod]
         public void SearchHotelsWithWrapper()
         {
-            WebDriverParams = "{\"Driver\":\"InternetExplorer\"}";
-            GoToUrl("http://www.lastminutetravel.com");
-            var radioButton = FindElement(By.XPath("//*[@id='flights']/div/div[4]/div[3]/label"));
+            WebDriverParams = "{\"Driver\":\"IE\"}";
+            GoToUrl("http://www.lastminutetravel.com/flights");
+            var radioButton = FindElement(By.XPath("//*[@id='flights']/div/div[4]/div[3]"));
             radioButton.Click();
-            Assert.AreNotEqual(true, radioButton.Selected);
+            var radio2 = FindElement(By.XPath("//*[@id='radio2']"));
+            Assert.AreEqual(true, radio2.Selected);
+
+
+
+
+            //auto-complete text-box
+            //from
+            FindElement(By.XPath("//*[@id=\"autosuggest-flightsFrom\"]")).SendKeys("N"); ;
+            //DEALING WITH AUTO-FILLING             
+            FindElement(By.XPath("//*[@id='react-autowhatever-1-section-0-item-0']/div/span[2]")).Click();
+            
+            //to
+            FindElement(By.XPath("//*[@id='autosuggest-flightsTo']")).SendKeys("M");
+            FindElement(By.XPath("//*[@id='react-autowhatever-1-section-0-item-0']/div/span[2]")).Click();
+            
+            FindElement(By.XPath("//*[@id='flights']/div/div[4]/div[1]/select")).ComboBox().SelectByIndex(1);
+
+
+            FindElement(By.XPath("//*[@id='findFlights']")).Click();
+
+            WebDriver.Dispose();
+        }
+
+        [TestMethod]
+        public void FindElementsSamples()
+        {
+            WebDriverParams = "{\"Driver\":\"IE\"}";
+            GoToUrl("http://www.lastminutetravel.com/flights");
+
+            var elements = FindElements(By.XPath("//input[@type='radio']"));
+            //elements.ForEach(element => { element.Click(); });
+            foreach (var element in elements)
+            {
+                element.Click();
+            }
+            
         }
     }
 }

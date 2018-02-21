@@ -7,13 +7,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace WebDriverWrapper
 {
     public class SeleniumHandler
     {
-        private string webDriverParams = "{\"Driver\":\"InternetExplorer\"}";
+        private string webDriverParams = "{\"Driver\":\"IE\"}";
         public string WebDriverParams
         {
             get
@@ -147,23 +148,70 @@ namespace WebDriverWrapper
 
         public IWebElement FindElement(By by, int interval = 500, int timeout = 15000)
         {
+            IWebElement webElement = null;
+            var tick = 0; //time interval
             try
             {
                 do
                 {
                     try
                     {
-
+                        webElement = WebDriver.FindElement(by);
                     }
-                    catch { }
-                } while (true);
+                    catch
+                    {
+                        Thread.Sleep(interval);
+                        tick += interval;
+                    }
+                } while (webElement == null && tick < timeout);
+
+                if (webElement == null)
+                {
+                    throw new TimeoutException(string.Format("Element(s) were not found within {}sec.", (timeout/1000).ToString()));
+                }
+                return webElement;
             }
             catch (Exception)
             {
-
                 throw;
             }
-            finally { }
         }
+
+        public List<IWebElement> FindElements(By by, int interval = 500, int timeout = 15000)
+        {
+            var elements = new List<IWebElement>();
+            var tick = 0;
+            try
+            {
+                do
+                {
+                    try
+                    {
+                        elements = WebDriver.FindElements(by).ToList();
+                        if (elements.Count == 0)
+                        {
+                            Thread.Sleep(interval);
+                            tick += interval;
+                        }
+                    }
+                    catch
+                    {
+                        Thread.Sleep(interval);
+                        tick += interval;
+                    }
+                } while (elements.Count == 0 && tick < timeout);
+                return elements;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        
+
+
     }
+
+   
 }
