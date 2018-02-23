@@ -350,9 +350,14 @@ namespace UdemyAutomationProject
             //Assert.AreNotEqual(0, FindElements(By.XPath("//*[@id='SBInnerContent']")));
 
 
-            var temp = GetDisplayedElement(By.XPath("//*[@id='SBInnerContent']"));
-            var temp2 = String.Empty;
+            //var temp = GetDisplayedElement(By.XPath("//*[@id='Tgs_f_depTitle']/td")).Text;
+            //var temp = FindElement(By.XPath("//*[@id='Tgs_f_depTitle']/td")).Text;
+            //var temp = WaitForDisplayedElement(By.XPath("//*[@id='Tgs_f_depTitle']/td")).Text;
 
+            //for elements that appear after sth is clicked etc. - expensive method
+            WaitForDisplayedElement(By.XPath("//*[@id='Tgs_f_depTitle']/td")).Click();
+
+            WebDriver.Dispose();
 
         }
 
