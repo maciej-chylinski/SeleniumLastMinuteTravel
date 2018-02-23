@@ -15,7 +15,7 @@ $x("//*[@id='find-hotels']")
 
 To remove hidden elements:
 $x("//*[contains(@id,'find-hotels') and not (@type='hidden')]")
-
+$x("//*[contains(@id, 'autosuggest-flights*')]")
 
 //PROBLEMS - selenium
 //1. (unexpected) Pop Up banners

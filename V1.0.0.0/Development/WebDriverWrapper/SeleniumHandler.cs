@@ -101,7 +101,7 @@ namespace WebDriverWrapper
                 //System.setProperty(“webdriver.chrome.driver”, “C:\\Program Files(x86)\\Google\\Chrome\\Application\\chrome.exe”);
                 var options = new ChromeOptions();
                 //options.AddArgument("--disable-extensions");
-                options.BinaryLocation = @"C:\Program Files(x86)\Google\Chrome Dev\Application\chrome.exe";
+                //options.BinaryLocation = @"C:\Program Files(x86)\Google\Chrome Dev\Application\chrome.exe";
 
                 return new ChromeDriver(options);
             }
@@ -208,9 +208,80 @@ namespace WebDriverWrapper
             }
         }
 
-        
+        public IWebElement GetDisplayedElement(By by, int interval = 500, int timeout = 15000)
+        {
+            try
+            {
+                var elements = FindElements(by, interval, timeout);
 
+                foreach (IWebElement element in elements)
+                {
+                    if (element.Displayed)
+                    {
+                        return element;
+                    }
+                }
+                throw new ElementNotVisibleException();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
+        public List<IWebElement> GetDisplayedElements(By by, int interval = 500, int timeout = 15000)
+        {
+            try
+            {
+                var elements = FindElements(by, interval, timeout);
+                var displyedElements = new List<IWebElement>();
+
+                elements.ForEach(element =>
+                {
+                    if (element.Displayed)
+                    {
+                        displyedElements.Add(element);
+                    }
+                });
+                return displyedElements;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public IWebElement WaitForDisplayedElement(By by, int interval = 500, int timeout = 15000)
+        {
+            try
+            {
+                IWebElement webElement = null;
+                var tick = 0;
+                do
+                {
+                    try
+                    {
+                        webElement = FindElement(by, interval, timeout);
+                        if (!webElement.Displayed)
+                        {
+                            throw new ElementNotVisibleException();
+                        }
+                        return webElement;
+                    }
+                    catch (Exception)
+                    {
+                        Thread.Sleep(interval);
+                        tick += interval;
+                    }
+                } while (tick < timeout);
+
+                throw new TimeoutException(string.Format("Element(s) were not found within {}sec.", (timeout / 1000).ToString()));
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 
    
