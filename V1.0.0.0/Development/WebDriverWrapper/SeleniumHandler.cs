@@ -85,7 +85,8 @@ namespace WebDriverWrapper
                 options.Profile.DeleteAfterUse = true;
                 */
 
-                return new FirefoxDriver(profile);
+                //return new FirefoxDriver(profile);
+                return new FirefoxDriver();
             }
             catch (Exception)
             {

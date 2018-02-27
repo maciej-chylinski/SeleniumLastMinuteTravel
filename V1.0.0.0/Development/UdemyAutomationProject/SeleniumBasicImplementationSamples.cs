@@ -358,9 +358,93 @@ namespace UdemyAutomationProject
             WaitForDisplayedElement(By.XPath("//*[@id='Tgs_f_depTitle']/td")).Click();
 
             WebDriver.Dispose();
-
         }
 
+
+        [TestMethod]
+        public void ScrollPageSample()
+        {
+            WebDriverParams = "{\"Driver\":\"Chrome\"}";
+            GoToUrl("http://www.lastminutetravel.com/flights");
+            var radioButton = FindElement(By.XPath("//*[@id='flights']/div/div[4]/div[3]"));
+            radioButton.Click();
+            var radio2 = FindElement(By.XPath("//*[@id='radio2']"));
+            Assert.AreEqual(true, radio2.Selected);
+            
+            FindElement(By.XPath("//*[@id=\"autosuggest-flightsFrom\"]")).SendKeys("N"); ;
+            FindElement(By.XPath("//*[@id='react-autowhatever-1-section-0-item-0']/div/span[2]")).Click();
+
+            FindElement(By.XPath("//*[@id='autosuggest-flightsTo']")).SendKeys("M");
+            FindElement(By.XPath("//*[@id='react-autowhatever-1-section-0-item-0']/div/span[2]")).Click();
+
+            FindElement(By.XPath("//*[@id='flights']/div/div[4]/div[1]/select")).ComboBox().SelectByIndex(1);
+
+
+            FindElement(By.XPath("//*[@id='findFlights']")).Click();
+
+            Assert.AreNotEqual(0, FindElements(By.XPath("//*[@id='SBInnerContent']")));
+
+            for (int i = 0; i < 3; i ++)
+            {
+                WebDriver.ScrollBrowserPage(1000 * i);
+                Thread.Sleep(500);
+            }
+            WebDriver.Dispose();
+        }
+
+        [TestMethod]
+        public void ActionsSample()
+        {
+            WebDriverParams = "{\"Driver\":\"Chrome\"}";
+            GoToUrl("http://www.lastminutetravel.com/flights");
+
+            //Method 1 for context click - properties of the web element
+            //FindElement(By.XPath("//*[@id='flights']/div/div[4]/div[3]")).Actions().ContextClick().Perform();
+
+            //Method 2 - context click
+            FindElement(By.XPath("//*[@id='flights']/div/div[4]/div[3]")).ContextClick();
+
+            Thread.Sleep(5000);
+            WebDriver.Dispose();
+        }
+
+        [TestMethod]
+        public void BannersSample()
+        {
+            WebDriverParams = "{\"Driver\":\"Chrome\"}";
+            GoToUrl("http://www.lastminutetravel.com/flights");
+
+            //BANNERS LISTENER - for Xpath take Xpath for banner
+            WebDriver.BannersListener(By.XPath(""), 1000);
+
+            var radioButton = FindElement(By.XPath("//*[@id='flights']/div/div[4]/div[3]"));
+            radioButton.Click();
+            var radio2 = FindElement(By.XPath("//*[@id='radio2']"));
+            Assert.AreEqual(true, radio2.Selected);
+
+
+
+
+            //auto-complete text-box
+            //from
+            FindElement(By.XPath("//*[@id=\"autosuggest-flightsFrom\"]")).SendKeys("N"); ;
+            //DEALING WITH AUTO-FILLING             
+            FindElement(By.XPath("//*[@id='react-autowhatever-1-section-0-item-0']/div/span[2]")).Click();
+
+            //to
+            FindElement(By.XPath("//*[@id='autosuggest-flightsTo']")).SendKeys("M");
+            FindElement(By.XPath("//*[@id='react-autowhatever-1-section-0-item-0']/div/span[2]")).Click();
+
+            FindElement(By.XPath("//*[@id='flights']/div/div[4]/div[1]/select")).ComboBox().SelectByIndex(1);
+
+
+            FindElement(By.XPath("//*[@id='findFlights']")).Click();
+
+            //
+            Assert.AreNotEqual(0, FindElements(By.XPath("//*[@id='SBInnerContent']")));
+
+            WebDriver.Dispose();
+        }
 
 
 
